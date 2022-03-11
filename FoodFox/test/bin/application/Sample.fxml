@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="702.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="480.0" prefWidth="485.0" styleClass="secondary-color" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="166.0" prefWidth="424.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <ImageView fitHeight="78.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                     <VBox.margin>
+                        <Insets left="25.0" right="10.0" top="20.0" />
+                     </VBox.margin>
+                     <image>
+                        <Image url="@../../../../Pictures/Saved%20Pictures/original.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="56.0" prefWidth="370.0" text="HELLO , USERNAME!" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="130.0" top="-65.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" text="EDIT PROFILE" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="19.0" top="20.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <HBox prefHeight="25.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="USERNAME : " textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="CONTACT NUMBER :" textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="EMAIL : " textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="LOCATION : " textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="25.0" prefWidth="424.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="POINTS : " textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <VBox prefHeight="480.0" prefWidth="219.0" styleClass="primary-color" stylesheets="@application.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="72.0" prefWidth="234.0" text="          PAST ORDERS" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="412.0" prefWidth="322.0" />
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

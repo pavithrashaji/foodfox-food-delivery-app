@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FinalPageController">
+   <children>
+      <Rectangle arcHeight="15.0" arcWidth="15.0" height="340.0" layoutX="868.0" layoutY="240.0" stroke="#915f6d" strokeType="INSIDE" strokeWidth="2.0" width="340.0" />
+      <Rectangle arcHeight="15.0" arcWidth="15.0" height="66.0" layoutX="910.0" layoutY="594.0" stroke="#915f6d" strokeType="INSIDE" width="252.4" />
+      <Rectangle arcHeight="15.0" arcWidth="15.0" height="61.0" layoutX="45.0" layoutY="58.0" stroke="#915f6d" strokeType="INSIDE" width="734.0" />
+      <VBox layoutX="43.0" layoutY="180.0" spacing="40.0">
+         <children>
+            <Pane>
+               <children>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="5.0" layoutY="5.0" stroke="#915f6d" strokeType="INSIDE" width="182.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="RESTAURANT" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="216.0" layoutY="5.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
+                  <Label fx:id="restnameLabel" alignment="CENTER" layoutX="211.0" prefHeight="51.0" prefWidth="521.0" style="-fx-border-color: d4af37; -fx-border-radius: 5; -fx-background-color: #000000;" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="5.0" layoutY="5.0" stroke="#915f6d" strokeType="INSIDE" width="182.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="LOCATION" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="216.0" layoutY="5.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
+                  <Label fx:id="orderlocLabel" alignment="CENTER" layoutX="211.0" prefHeight="51.0" prefWidth="521.0" style="-fx-border-color: d4af37; -fx-border-radius: 5; -fx-background-color: #000000;" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="5.0" layoutY="5.0" stroke="#915f6d" strokeType="INSIDE" width="182.0" />
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="DELIVERY AGENT" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="217.0" layoutY="5.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
+                  <Label fx:id="deliveryagentLabel" alignment="CENTER" layoutX="211.0" prefHeight="51.0" prefWidth="522.0" style="-fx-border-color: d4af37; -fx-border-radius: 5; -fx-background-color: #000000;" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="217.0" layoutY="5.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="5.0" layoutY="5.0" stroke="#915f6d" strokeType="INSIDE" width="182.0" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="ARRIVING IN" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Label fx:id="arrivinginLabel" alignment="CENTER" layoutX="211.0" prefHeight="51.0" prefWidth="522.0" style="-fx-border-color: d4af37; -fx-border-radius: 5; -fx-background-color: #000000;" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane>
+               <children>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="5.0" layoutY="5.0" stroke="#915f6d" strokeType="INSIDE" width="182.0" />
+                  <Label alignment="CENTER" prefHeight="51.0" prefWidth="182.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="POINTS EARNED" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="24.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+                  <Rectangle arcHeight="15.0" arcWidth="15.0" height="51.0" layoutX="217.0" layoutY="5.0" stroke="#d4af37" strokeType="INSIDE" width="521.0" />
+                  <Label fx:id="pointsearnedLabel" alignment="CENTER" layoutX="211.0" prefHeight="51.0" prefWidth="522.0" style="-fx-border-color: d4af37; -fx-border-radius: 5; -fx-background-color: #000000;" textFill="WHITE">
+                     <font>
+                        <Font name="Gabriola" size="30.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Label alignment="CENTER" layoutX="50.0" layoutY="63.0" prefHeight="51.0" prefWidth="724.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="Thank you for ordering with us! Your order will arrive shortly!" textFill="WHITE">
+         <font>
+            <Font name="Gabriola" size="35.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label alignment="CENTER" layoutX="867.0" layoutY="179.0" prefHeight="51.0" prefWidth="338.0" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="Calculating your proximity..." textFill="WHITE">
+         <font>
+            <Font name="Gabriola" size="30.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <ImageView fitHeight="320.0" fitWidth="320.0" layoutX="878.0" layoutY="251.0" preserveRatio="true">
+         <image>
+            <Image url="@../img/defaultmap.png" />
+         </image>
+      </ImageView>
+      <Line endX="99.0" endY="-10.0" layoutX="-87.0" layoutY="26.0" startX="98.0" startY="652.0" stroke="#d4af37" strokeWidth="2.0" />
+      <Line endX="100.0" endY="-6.0" layoutX="-78.0" layoutY="33.0" startX="100.0" startY="655.0" stroke="#d4af37" strokeWidth="2.0" />
+      <Line endX="1332.0" endY="341.0" layoutX="-78.0" layoutY="338.0" startX="90.0" startY="341.0" stroke="#d4af37" strokeWidth="2.0" />
+      <Line endX="1333.0" endY="341.0" layoutX="-67.0" layoutY="348.0" startX="90.0" startY="341.0" stroke="#d4af37" strokeWidth="2.0" />
+      <Button fx:id="logout" layoutX="915.0" layoutY="599.0" mnemonicParsing="false" onAction="#logout" prefHeight="56.0" prefWidth="242.4" style="-fx-background-color: #915f6d; -fx-background-radius: 5;" text="l o g   o u t" textFill="WHITE">
+         <font>
+            <Font name="Georgia" size="20.0" />
+         </font>
+      </Button>
+      <Rectangle height="100.0" layoutY="700.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1280.0" />
+      <Circle layoutX="1180.0" layoutY="92.0" radius="50.0" stroke="#d4af37" strokeType="INSIDE" strokeWidth="1.5" />
+      <Label layoutX="1147.0" layoutY="42.0" text="f" textFill="#d4af37">
+         <font>
+            <Font name="Ink Free" size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="1171.0" layoutY="53.0" text="ood" textFill="#d4af37">
+         <font>
+            <Font name="Ink Free" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="1168.0" layoutY="74.0" text="ox" textFill="#d4af37">
+         <font>
+            <Font name="Ink Free" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="mb" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="523.0" layoutY="65.0" prefHeight="27.0" prefWidth="595.0" text="Hello, Meenakshy" textAlignment="RIGHT" textFill="#d4af37">
+         <font>
+            <Font name="Cambria" size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="ptslabel" alignment="CENTER_RIGHT" layoutX="985.0" layoutY="92.0" prefHeight="27.0" prefWidth="135.0" text="Points: 150 " textFill="#d4af37">
+         <font>
+            <Font name="Cambria" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
