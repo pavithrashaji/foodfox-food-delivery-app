@@ -94,12 +94,155 @@ public class SelectionPageSceneController {
 	PreparedStatement pst,ps, ps1;
 	ResultSet rs,rst, rs1;
 
-	String cid, fname, lname, phone, email, location, username, orderno, foodno;
+	String cid, fname, lname, phone, email, location, username, orderno, foodno, rid, foodid;
+	String f1, f2, f3, f4, f5, f6, f7, f8, f9, f10;
+	float pr1, pr2, pr3, pr4, pr5, pr6, pr7, pr8, pr9, pr10; 
 	int pts;
 	String O_ID;
         int oid;
 	@FXML
-        private Label mb, ptslabel;
+        private Label mb, ptslabel, rlabel1, rlabel2, rlabel3;
+	@FXML
+    private Label food1, food2, food3, food4, food5, food6, food7, food8, food9, food10;
+	
+	public void getRestaurant(String id)
+	{
+		rid = id;
+		try 
+		{	
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+			ps=con.prepareStatement("select * from Restaurant where RID=?");
+			ps.setString(1,rid);
+			rs=ps.executeQuery();
+			while(rs.next())
+			{
+				rlabel1.setText("   "+rs.getString(2)+"   ");
+				rlabel2.setText("   "+rs.getString(2)+"   ");
+				rlabel3.setText("   "+rs.getString(2)+"   ");
+			}
+		}
+		
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+		}
+		
+		for(int i=1; i<=10; i++)
+		{
+			if(i<10)
+				foodid = rid + "F0" + i;
+			else
+				foodid = rid + "F" + i;
+			try 
+			{	
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+				ps=con.prepareStatement("select * from FoodItem where RID=? and FID=?");
+				ps.setString(1,rid);
+				ps.setString(2, foodid);
+				rs1=ps.executeQuery();
+				
+				if(i==1)
+				{
+					while(rs1.next())
+					{
+						food1.setText(rs1.getString(3));
+						f1 = rs1.getString(3);
+						pr1 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==2)
+				{
+					while(rs1.next())
+					{
+						food2.setText(rs1.getString(3));
+						f2 = rs1.getString(3);
+						pr2 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==3)
+				{
+					while(rs1.next())
+					{
+						food3.setText(rs1.getString(3));
+						f3 = rs1.getString(3);
+						pr3 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==4)
+				{
+					while(rs1.next())
+					{
+						food4.setText(rs1.getString(3));
+						f4 = rs1.getString(3);
+						pr4 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==5)
+				{
+					while(rs1.next())
+					{
+						food5.setText(rs1.getString(3));
+						f5 = rs1.getString(3);
+						pr5 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==6)
+				{
+					while(rs1.next())
+					{
+						food6.setText(rs1.getString(3));
+						f6 = rs1.getString(3);
+						pr6 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==7)
+				{
+					while(rs1.next())
+					{
+						food7.setText(rs1.getString(3));
+						f7 = rs1.getString(3);
+						pr7 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==8)
+				{
+					while(rs1.next())
+					{
+						food8.setText(rs1.getString(3));
+						f8 = rs1.getString(3);
+						pr8 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==9)
+				{
+					while(rs1.next())
+					{
+						food9.setText(rs1.getString(3));
+						f9 = rs1.getString(3);
+						pr9 = rs1.getFloat(4);
+					} 
+				}
+				else if(i==10)
+				{
+					while(rs1.next())
+					{
+						food10.setText(rs1.getString(3));
+						f10 = rs1.getString(3);
+						pr10 = rs1.getFloat(4);
+					} 
+				}
+			}
+			
+			catch(Exception ex)
+			{
+				ex.printStackTrace();
+			}
+			
+		}
+		
+	}
 	
 	public void getID(String id, String a,String b,String c,String d,String e,String f,int g)
 	{
@@ -146,6 +289,8 @@ public class SelectionPageSceneController {
 	 arg0.setTitle("foodfoxdatabase"); //arg0 is the primary stage
          CartController controller=loader.getController();
          controller.getID(cid, fname, lname, phone, email, location, username, pts);
+         controller.getRestaurant(rid);
+         
 	 Scene scene=new Scene(root,1300,700);
          scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
          arg0.setScene(scene);
@@ -367,8 +512,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q1);
-                        pst.setFloat(6,400*q1);
-                        pst.setString(4,"Momo Mia Pizza");
+                        pst.setFloat(6,pr1*q1);
+                        pst.setString(4,f1);
                         pst.execute();
                         add1.setDisable(true);
                         add1.setText("ADDED");
@@ -396,8 +541,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q2);
-                        pst.setFloat(6,350*q2);
-                        pst.setString(4,"Tandoori Paneer Pizza");
+                        pst.setFloat(6,pr2*q2);
+                        pst.setString(4,f2);
                         pst.execute();
                         add2.setDisable(true);
                         add2.setText("ADDED"); 
@@ -424,8 +569,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q3);
-                        pst.setFloat(6,250*q3);
-                        pst.setString(4,"Veggie Supreme");
+                        pst.setFloat(6,pr3*q3);
+                        pst.setString(4,f3);
                         pst.execute();
                         add3.setDisable(true);
                         add3.setText("ADDED");
@@ -453,8 +598,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q4);
-                        pst.setFloat(6,280*q4);
-                        pst.setString(4,"Veg Kebab");
+                        pst.setFloat(6,pr4*q4);
+                        pst.setString(4,f4);
                         pst.execute();
                         add4.setDisable(true);
                         add4.setText("ADDED");
@@ -482,8 +627,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q5);
-                        pst.setFloat(6,350*q5);
-                        pst.setString(4,"Chicken Supreme");
+                        pst.setFloat(6,pr5*q5);
+                        pst.setString(4,f5);
                         pst.execute();
                         add5.setDisable(true);
                         add5.setText("ADDED");
@@ -511,8 +656,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q6);
-                        pst.setFloat(6,340*q6);
-                        pst.setString(4,"Chicken Tikka");
+                        pst.setFloat(6,pr6*q6);
+                        pst.setString(4,f6);
                         add6.setDisable(true);
                         add6.setText("ADDED");
                         pst.execute();
@@ -539,8 +684,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q7);
-                        pst.setFloat(6,450*q7);
-                        pst.setString(4,"Chicken Triple feast");
+                        pst.setFloat(6,pr7*q7);
+                        pst.setString(4,f7);
                         pst.execute();
                         add7.setDisable(true);
                         add7.setText("ADDED");
@@ -566,8 +711,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q8);
-                        pst.setFloat(6,220*q8);
-                        pst.setString(4,"Veg Kebab Surprise");
+                        pst.setFloat(6,pr8*q8);
+                        pst.setString(4,f8);
                         pst.execute();
                         add8.setDisable(true);
                         add8.setText("ADDED");
@@ -594,8 +739,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q9);
-                        pst.setFloat(6,300*q9);
-                        pst.setString(4,"Double Sausage");
+                        pst.setFloat(6,pr9*q9);
+                        pst.setString(4,f9);
                         pst.execute();
                         add9.setDisable(true);
                         add9.setText("ADDED");
@@ -623,8 +768,8 @@ public class SelectionPageSceneController {
                         i++;
                         pst.setString(3,O_ID+"F"+i);
                         pst.setInt(5,q10);
-                        pst.setFloat(6,245*q10);
-                        pst.setString(4,"Corn and Cheese");
+                        pst.setFloat(6,pr10*q10);
+                        pst.setString(4,f10);
                         pst.execute();
                         add10.setDisable(true);
 			 			add10.setText("ADDED");
