@@ -86,6 +86,39 @@ public class CartController implements Initializable {
         private Label mb, ptslabel;
 	float sum=0;
         int points=0;
+        String rid, rname;
+        
+    public void getRestaurant(String id)
+    {
+    	rid = id;
+    	try
+	    {
+	    	Class.forName("com.mysql.cj.jdbc.Driver");
+	    	con1=DriverManager.getConnection("jdbc:mysql://localhost:3306/foodfoxdatabase","root","chimera");
+	    	ps1=con1.prepareStatement("select * from Restaurant where RID=?");
+	    	ps1.setString(1,rid);
+   		 	rs1=ps1.executeQuery();
+   		 	while(rs1.next())
+   		 	{
+   		 		rname = rs1.getString(2);
+   		 		System.out.println("*"+rname+"*");
+   		 		rlabel.setText(rname);
+   		 	}
+   		 	if(sum == 0)
+   		 	{
+        	    rlabel.setText(" -- ");
+        	    falabel.setText(" -- ");
+        	    eptslabel.setText(" -- ");
+        	    confirm.setDisable(true);
+				confirm.setText("   N O   O R D E R S   P L A C E D   "); 
+				lcancel.setVisible(true);
+   		 	}
+	    }
+	    catch(Exception ex)
+        {
+            ex.printStackTrace();
+        }
+    }
 	public void getID(String id, String a,String b,String c,String d,String e,String f,int g)
 	{
             cid = id;
@@ -238,25 +271,14 @@ public class CartController implements Initializable {
 	    		 }
                          falabel.setText("Rs. "+sum);
                          points=(int) Math.floor(sum/10);
-                         eptslabel.setText(""+points);
-                         rlabel.setText("Pizza Hut");
-                         if(sum == 0)
-                         {
-                        	    rlabel.setText(" -- ");
-                        	    falabel.setText(" -- ");
-                        	    eptslabel.setText(" -- ");
-                        	    confirm.setDisable(true);
-               				 	confirm.setText("   N O   O R D E R S   P L A C E D   "); 
-               				 	lcancel.setVisible(true);
-                         }
-                         
-	    		 
+                         eptslabel.setText(""+points); 
 	    	}
 	    	catch(ClassNotFoundException | SQLException ex)
 	        {
 	    		System.out.println("Connection failed");
 	    		System.out.println(ex);
 	        }
+	    
 	    try
     	{
     		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -405,7 +427,7 @@ public class CartController implements Initializable {
 				 ps2=con2.prepareStatement("insert into OrderDetails values(?,?,?,?,?,?)");
 	    		 ps2.setString(1,cid);
 	             ps2.setString(2,orderno);
-	             ps2.setString(3,"Pizza Hut");
+	             ps2.setString(3,rname);
 	             ps2.setString(4,""+sum);
 	             ps2.setString(5,""+points);
 	             ps2.setString(6,(String)locationBox.getValue());
